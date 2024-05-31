@@ -3,7 +3,7 @@
 long phase = 1000;  //  How quickly should the light fade in and out
 
 void setup() {
-  pinMode(5, OUTPUT); //  Set the output mode for the pin the LED is connected to
+  pinMode(4, OUTPUT); //  Set the output mode for the pin the LED is connected to
 }
 
 void loop() {
@@ -11,8 +11,8 @@ void loop() {
 
   if(mil >= phase){  //  If we have passed the half way point the strength should decrease
     mil -= phase;
-    analogWrite(5, map(mil, 0, phase-1, 255, 0));   //  Map the amount of milliseconds to the strength of the pwm output the arduino should generate
+    analogWrite(4, map(mil, 0, phase-1, 255, 0));   //  Map the amount of milliseconds to the strength of the pwm output the arduino should generate
   }else{
-    analogWrite(5, map(mil, 0, phase-1, 0, 255));
+    analogWrite(4, map(mil, 0, phase-1, 0, 255));
   }
 }
